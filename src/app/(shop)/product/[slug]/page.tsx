@@ -1,3 +1,4 @@
+import ProductSlideshow from "@/components/product/slideshow/ProductSlideshow";
 import QuantitySelector from "@/components/product/quantity-selector/QuantitySelector";
 import SizeSelector from "@/components/product/size-selector/SizeSelector";
 
@@ -23,7 +24,7 @@ export default function ({ params }: Props) {
     <div className="mt-5 mb-20 grid md:grid-cols-3 gap-3">
       {/* SlideShow */}
       <div className="col-span-1 md:col-span-2 ">
-        <h1>Hola Mundo</h1>
+        <ProductSlideshow title={product.title} images={product.images} />
       </div>
 
       {/* Detalles */}
