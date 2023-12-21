@@ -38,8 +38,8 @@ export default function ({ params }: Props) {
               )}
             >
               <IoCardOutline size={30} />
-              <span className="mx-2 py-2">Pendiente de pago</span>
-              {/* <span className="mx-2 my-2">Orden pagada</span> */}
+              {/* <span className="mx-2 py-2">Pendiente de pago</span> */}
+              <span className="mx-2 my-2">Orden pagada</span>
             </div>
 
             {/* Items */}
@@ -102,8 +102,8 @@ export default function ({ params }: Props) {
                 )}
               >
                 <IoCardOutline size={30} />
-                <span className="mx-2 py-2">Pendiente de pago</span>
-                {/* <span className="mx-2 my-2">Orden pagada</span> */}
+                {/* <span className="mx-2 py-2">Pendiente de pago</span> */}
+                <span className="mx-2 my-2">Orden pagada</span>
               </div>
             </div>
           </div>
