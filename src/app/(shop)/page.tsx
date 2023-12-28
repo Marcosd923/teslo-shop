@@ -2,8 +2,14 @@ import { getPaginatedProductsWithImages } from "@/actions";
 import ProductGrid from "@/components/products/product-grid/ProductGrid";
 import Title from "@/components/ui/title/Title";
 
-export default async function Home() {
-  const { products } = await getPaginatedProductsWithImages();
+interface Props {
+  searchParams: {
+    paga?: string;
+  };
+}
+
+export default async function Home({ searchParams }: Props) {
+  const { products } = await getPaginatedProductsWithImages({});
 
   return (
     <>
