@@ -3,11 +3,11 @@ import prisma from "../lib/prisma";
 
 async function main() {
   //1. Borrar registros previos
-  await Promise.all([
-    prisma.productImage.deleteMany(),
-    prisma.product.deleteMany(),
-    prisma.category.deleteMany(),
-  ]);
+  // await Promise.all([
+  await prisma.productImage.deleteMany();
+  await prisma.product.deleteMany();
+  await prisma.category.deleteMany();
+  // ]);
 
   // Categorias
 
@@ -27,8 +27,6 @@ async function main() {
     map[category.name.toLowerCase()] = category.id;
     return map;
   }, {} as Record<string, string>);
-
-  console.log(categoriesMap);
 
   //Productos
   // const { images, type, ...product1 } = products[0];
@@ -51,6 +49,14 @@ async function main() {
     });
 
     //Images
+    const imagesData = images.map((image) => ({
+      url: image,
+      productID: dbProduct.id,
+    }));
+
+    await prisma.productImage.createMany({
+      data: imagesData,
+    });
   });
 
   console.log("seed ejecutado correctamente");
