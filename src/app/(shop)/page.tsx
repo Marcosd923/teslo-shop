@@ -4,12 +4,13 @@ import Title from "@/components/ui/title/Title";
 
 interface Props {
   searchParams: {
-    paga?: string;
+    page?: string;
   };
 }
 
 export default async function Home({ searchParams }: Props) {
-  const { products } = await getPaginatedProductsWithImages({});
+  const page = searchParams.page ? parseInt(searchParams.page) : 1;
+  const { products } = await getPaginatedProductsWithImages({ page });
 
   return (
     <>
