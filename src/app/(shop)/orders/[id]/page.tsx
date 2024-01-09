@@ -17,7 +17,7 @@ interface Props {
   };
 }
 
-export default function ({ params }: Props) {
+export default function OrdersByIdPage({ params }: Props) {
   const { id } = params;
 
   //to do : verificar(ver si esta logueado, o si es admin)
