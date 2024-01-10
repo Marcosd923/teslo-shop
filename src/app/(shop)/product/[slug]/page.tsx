@@ -9,6 +9,7 @@ import { titleFont } from "@/config/font";
 import { notFound } from "next/navigation";
 import ProductMobileSlideshow from "@/components/product/slideshow/ProductMobileSlideshow";
 import { getProductBySlug } from "@/actions";
+import { StockLabel } from "@/components";
 
 interface Props {
   params: {
@@ -45,6 +46,8 @@ export default async function ProductBySlugPage({ params }: Props) {
 
       {/* Detalles */}
       <div className="col-span-1 px-5">
+        <StockLabel slug={product.slug} />
+
         <h1 className={`${titleFont.className} antialiased font-bold text-xl`}>
           {product.title}
         </h1>
