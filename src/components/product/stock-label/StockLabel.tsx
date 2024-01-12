@@ -2,7 +2,7 @@
 
 import { titleFont } from "@/config/font";
 import { useEffect, useState } from "react";
-import { getStockBySlug } from "../../../actions/products/get-slug-by-stock";
+import { getStockBySlug } from "../../../actions/products/get-stock-by-slug";
 
 interface Props {
   slug: string;
@@ -19,11 +19,22 @@ export const StockLabel = ({ slug }: Props) => {
   const getStock = async () => {
     const inStock = await getStockBySlug(slug);
     setstock(inStock);
+    setisLoading(false);
   };
 
   return (
-    <h1 className={`${titleFont.className} antialiased font-bold text-lg`}>
-      Stock: {stock}
-    </h1>
+    <>
+      {isLoading ? (
+        <h1
+          className={`${titleFont.className} antialiased font-bold text-lg bg-gray-200 animate-ping`}
+        >
+          &nbsp;
+        </h1>
+      ) : (
+        <h1 className={`${titleFont.className} antialiased font-bold text-lg`}>
+          Stock: {stock}
+        </h1>
+      )}
+    </>
   );
 };
