@@ -25,7 +25,9 @@ export const AddToCart = ({ product }: Props) => {
   return (
     <>
       {posted && !size && (
-        <span className="text-red-500 mt-2">Debe seleccionar una talla*</span>
+        <span className="text-red-500 mt-2 fade-in">
+          Debe seleccionar una talla*
+        </span>
       )}
 
       {/* Selector de Tallas */}
