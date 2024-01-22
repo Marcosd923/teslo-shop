@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import QuantitySelector from "@/components/product/quantity-selector/QuantitySelector";
 import SizeSelector from "@/components/product/size-selector/SizeSelector";
-import { CartProduct, Product, Size } from "@/interfaces";
+import type { CartProduct, Product, Size } from "@/interfaces";
 import { useCartStore } from "@/store";
 
 interface Props {

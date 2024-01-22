@@ -3,11 +3,12 @@ import Link from "next/link";
 import { IoSearchOutline, IoCartOutline } from "react-icons/io5";
 
 import { titleFont } from "@/config/font";
-import { useUIStore } from "@/store";
+import { useCartStore, useUIStore } from "@/store";
 
 const TopMenu = () => {
   const openSideMenu = useUIStore((state) => state.openSideMenu);
 
+  const totalItemsInCart = useCartStore;
   return (
     <nav className="flex px-5 justify-between items-center w-full">
       {/* Logo */}
